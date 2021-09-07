@@ -4,6 +4,12 @@ module.exports = {
     title: "under the ground website",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-theme-ui",
+      options: {
+        preset: "@theme-ui/sidenav",
+      },
+    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
@@ -15,7 +21,14 @@ module.exports = {
       },
     },
     "gatsby-transformer-remark",
-    "gatsby-plugin-mdx",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/layout.js"),
+        },
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
