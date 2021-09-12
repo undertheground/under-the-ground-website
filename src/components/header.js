@@ -9,9 +9,9 @@ export const Navbar = styled.nav`
 
 export const UL = styled.ul`
   padding-top: 6rem;
-  padding-right: 4rem;
+  padding-left: 0;
   height: 100%;
-  border-right: #e0e0e0;
+  border-right: #e0e0e0 solid 1px;
   list-style: none;
   background-color: #04010a;
   position: fixed;
@@ -19,10 +19,20 @@ export const UL = styled.ul`
 `;
 
 const LI = styled.li`
+  margin-top: 1rem;
+  padding-right: 6rem;
   color: #e0e0e0;
+  padding-left: 3rem;
+  padding-bottom: 1rem;
   font-weight: 700;
+  transition: all 0.5s;
   cursor: pointer;
   padding-top: 1rem;
+  :hover {
+    transition: all 0.5s;
+    background-color: azure;
+    color: #e00475;
+  }
 `;
 
 export const Head = styled.div`
@@ -32,6 +42,7 @@ export const Head = styled.div`
   padding: 1rem;
   /* position: fixed; */
   width: 100%;
+  cursor: pointer;
   border-bottom: 1px #e0e0e0 solid;
   font-size: 2rem;
   color: #e0e0e0;

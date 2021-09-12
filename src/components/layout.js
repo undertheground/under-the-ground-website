@@ -9,7 +9,7 @@ import ImageContainer from "../components/image-container";
 
 // const shortcodes = {};
 const holder = {
-  marginLeft: "12rem",
+  marginLeft: "14rem",
   // position: "relative",
 };
 
