@@ -7,9 +7,9 @@ const components = {
     </h1>
   ),
   link: (props) => (
-    <h1>
+    <h2>
       <a href={`${props.to}`}>{props.children}</a>
-    </h1>
+    </h2>
   ),
   p: (props) => (
     <p {...props}>

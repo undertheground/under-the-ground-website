@@ -1,12 +1,12 @@
 export const theme = {
   breakpoints: ["40em", "52em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "inherit",
-    monospace: "Menlo, monospace",
-  },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  // fonts: {
+  //   body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+  //   heading: "inherit",
+  //   monospace: "Menlo, monospace",
+  // },
+  // fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -23,26 +23,29 @@ export const theme = {
     secondary: "#30c",
     muted: "#f6f6f6",
   },
-  text: {
-    heading: {
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "heading",
-    },
-  },
+  // text: {
+  //   // heading: {
+  //   //   fontFamily: "heading",
+  //   //   lineHeight: "heading",
+  //   //   fontWeight: "heading",
+  //   // },
+  // },
   styles: {
-    root: {
-      fontFamily: "body",
-      lineHeight: "body",
-      fontWeight: "body",
-    },
     h1: {
-      variant: "text.heading",
-      fontSize: 5,
+      fontSize: 32,
+      fontFamily: "heading",
+      fontWeight: "heading",
+      color: "primary",
+      mt: 4,
+      mb: 2,
     },
     h2: {
-      variant: "text.heading",
-      fontSize: 4,
+      fontSize: 32,
+      fontFamily: "heading",
+      fontWeight: "heading",
+      color: "primary",
+      mt: 4,
+      mb: 2,
     },
     h3: {
       variant: "text.heading",

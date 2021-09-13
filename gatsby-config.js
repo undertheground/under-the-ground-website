@@ -7,7 +7,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-theme-ui",
       options: {
-        preset: "@theme-ui/sidenav",
+        prismPreset: "night-owl",
+        preset: "@theme-ui/preset-funk",
       },
     },
     "gatsby-plugin-styled-components",
