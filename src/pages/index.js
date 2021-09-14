@@ -1,12 +1,17 @@
 import * as React from "react";
 import "@fontsource/play"; // Defaults to weight 400 with all styles included.
 import "../styles/global.css";
+import Layout from "../components/layout.js";
 
 // styles
 
 // markup
 const IndexPage = () => {
-  return <h1>Welcome to the Under the Ground Design System</h1>;
+  return (
+    <Layout>
+      <h1>I’m in a layout!</h1>
+    </Layout>
+  );
 };
 
 export default IndexPage;

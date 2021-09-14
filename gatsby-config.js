@@ -2,6 +2,28 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "under the ground website",
+    menuLinks: [
+      {
+        name: "home",
+        link: "/",
+      },
+      {
+        name: "Button",
+        link: "/buttondoc",
+      },
+      {
+        name: "Input",
+        link: "/inputdoc",
+      },
+      {
+        name: "Button",
+        link: "/buttondoc",
+      },
+      {
+        name: "Button",
+        link: "/buttondoc",
+      },
+    ],
   },
   plugins: [
     {
@@ -26,7 +48,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/layout.js"),
+          default: require.resolve("./src/components/main-layout.js"),
         },
       },
     },

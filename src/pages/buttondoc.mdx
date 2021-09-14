@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from '@undertheground/react';
+import { Button } from '@undertheground/react';
 import colors from '@undertheground/color';
 import ButtonCover from '../images/ButtonIcon/ButtonCover.png'
 import LabelOnly from '../images/ButtonIcon/LabelOnly.png';
@@ -138,7 +138,10 @@ h6 {
     width:60%;
     margin: 3rem auto;
 }
-
+.edit-git {
+    color: ${colors.grey[3]};
+    text-decoration: none;
+}
 @media (max-width:1024px){
     .btn-anatomy{
         margin:0 3rem;
@@ -523,4 +526,7 @@ The size and placement of buttons can change as parent containers, such as cards
         <img src={GhostBtnStates} className="btn-states_img"/>
     </div>
 </div>
+
+<a className="edit-git" href="https://github.com/undertheground/under-the-ground-website/blob/main/src/pages/buttondoc.mdx">Edit this page on GitHub</a>
+
 </div>

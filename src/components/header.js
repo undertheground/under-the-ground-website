@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { Button } from "@undertheground/react";
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 import "@fontsource/permanent-marker"; // Defaults to weight 400 with all styles included.
-import { ArrowDropDown } from "@material-ui/icons";
 import { createPortal } from "react-dom";
+import { Link } from "gatsby";
+
 // import { NavLink } from "theme-ui";
 
 export const Navbar = styled.nav`
@@ -86,8 +87,10 @@ export const Title = styled.div`
   display: inline;
 `;
 
-export const NavLink = styled.p`
+export const NavLink = styled(Link)`
   color: #e0e0e0;
+  display: block;
+  text-decoration: none;
   margin-top: 1rem;
   margin-bottom: 2rem;
   cursor: pointer;
@@ -106,14 +109,83 @@ export const NavLink = styled.p`
   }}
 `;
 
-export default function Header() {
+export default function Header({ siteTitle, menuLinks }) {
   const [open, dropDown] = useState({ first: false, second: false });
-
+  const [active, setActive] = useState({
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+    6: false,
+  });
   const onClickDropDown = () => {
     dropDown({ ...open, first: !open.first });
   };
   const onClickDropDown2 = () => {
     dropDown({ ...open, second: !open.second });
+  };
+  const onClickSetActive = (item) => {
+    if (item === 1) {
+      setActive({
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false,
+        1: true,
+      });
+    }
+    if (item === 2) {
+      setActive({
+        1: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false,
+        2: true,
+      });
+    }
+    if (item === 3) {
+      setActive({
+        2: false,
+        1: false,
+        4: false,
+        5: false,
+        6: false,
+        3: true,
+      });
+    }
+    if (item === 4) {
+      setActive({
+        2: false,
+        1: false,
+        3: false,
+        5: false,
+        6: false,
+        4: true,
+      });
+    }
+    if (item === 5) {
+      setActive({
+        2: false,
+        1: false,
+        4: false,
+        3: false,
+        5: true,
+        6: false,
+      });
+    }
+    if (item === 6) {
+      setActive({
+        2: false,
+        1: false,
+        4: false,
+        5: false,
+        3: false,
+        6: true,
+      });
+    }
   };
   return (
     <div>
@@ -130,9 +202,28 @@ export default function Header() {
           </LI>
           {open.first ? (
             <div>
-              <NavLink>Philosophy</NavLink>
-              <NavLink>Team</NavLink>
-              <NavLink>Contribution</NavLink>
+              <NavLink
+                isActive={active[1]}
+                to={"/philosophy"}
+                onClick={() => onClickSetActive(1)}
+                activeStyle={{ color: "#e00475" }}
+              >
+                Philosophy
+              </NavLink>
+              <NavLink
+                isActive={active[2]}
+                onClick={() => onClickSetActive(2)}
+                activeStyle={{ color: "#e00475" }}
+              >
+                Team
+              </NavLink>
+              <NavLink
+                isActive={active[3]}
+                onClick={() => onClickSetActive(3)}
+                activeStyle={{ color: "#e00475" }}
+              >
+                Contribution
+              </NavLink>
             </div>
           ) : null}
           <LI onClick={onClickDropDown2}>
@@ -143,9 +234,28 @@ export default function Header() {
           </LI>
           {open.second ? (
             <div>
-              <NavLink isActive={true}>Button</NavLink>
-              <NavLink>Input</NavLink>
-              <NavLink>Sidenav</NavLink>
+              <NavLink
+                isActive={active[4]}
+                onClick={() => onClickSetActive(4)}
+                to={"/buttondoc"}
+                activeStyle={{ color: "#e00475" }}
+              >
+                Button
+              </NavLink>
+              <NavLink
+                isActive={active[5]}
+                onClick={() => onClickSetActive(5)}
+                activeStyle={{ color: "#e00475" }}
+              >
+                Input
+              </NavLink>
+              <NavLink
+                isActive={active[6]}
+                onClick={() => onClickSetActive(6)}
+                activeStyle={{ color: "#e00475" }}
+              >
+                Sidenav
+              </NavLink>
             </div>
           ) : null}
         </UL>
