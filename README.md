@@ -4,10 +4,10 @@ This repo will be the website of the Under the Ground design system.
 
 For more information check the link below:
 
-Website:
+Repository:
 
 <a href="https://github.com/undertheground/design-system">Under the Ground Website</a>
 
-Repository:
+Website:
 
 <a href="https://undertheground.wishwork.org">Under the Ground Repository</a>
