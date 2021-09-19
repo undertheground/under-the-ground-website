@@ -15,7 +15,7 @@ const Title = styled.div`
   padding-top: 10rem;
   @media (max-width: 768px) {
     margin-left: 0.5rem;
-    padding-top: 5rem;
+    padding-top: 5.5rem;
     margin-right: 0.5rem;
   }
 `;
@@ -27,7 +27,7 @@ const Tape = styled.div`
   color: #fff;
   text-align: justify;
   @media (max-width: 768px) {
-    padding: 2rem;
+    padding: 2rem 5rem;
   }
 `;
 const IndexPage = () => {
