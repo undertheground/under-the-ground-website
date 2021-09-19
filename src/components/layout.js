@@ -17,7 +17,7 @@ const holder = {
 
 const Layout = ({ children }) => {
   useEffect(() => {
-    console.log(children, "children");
+    // console.log(children, "children");
   }, []);
   return (
     <div>
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       // siteTitle={data.site.siteMetadata.title}
       /> */}
       {/* <div style={holder}> */}
-      <MDXProvider components={ImageContainer}>{children}</MDXProvider>;
+      <MDXProvider components={ImageContainer}>{children}</MDXProvider>
     </div>
     // </div>
   );

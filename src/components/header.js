@@ -4,7 +4,7 @@ import { Button } from "@undertheground/react";
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 import "@fontsource/permanent-marker"; // Defaults to weight 400 with all styles included.
 import { createPortal } from "react-dom";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import AllInclusiveIcon from "@material-ui/icons/AllInclusive";
 // import { NavLink } from "theme-ui";
 import colors from "@undertheground/color";
@@ -56,6 +56,7 @@ const LI = styled.li`
 
 export const Head = styled.div`
   background-color: #04010a;
+  text-decoration: none;
   z-index: 1;
   position: fixed;
   padding: 1rem;
@@ -72,7 +73,7 @@ export const Head = styled.div`
     color: #e00475;
   }
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding: 1.5rem;
   }
   @keyframes blinker {
@@ -108,6 +109,7 @@ export const IconInfinite = styled.div`
 export const Title = styled.div`
   font-family: "Permanent Marker", cursive;
   display: inline;
+  margin-right: 0.5rem;
 `;
 
 export const NavLink = styled(Link)`
@@ -213,7 +215,7 @@ export default function Header({ siteTitle, menuLinks }) {
   return (
     <div>
       <Navbar>
-        <Head>
+        <Head onClick={() => navigate("/", { replace: true })}>
           <div style={{ display: "flex", alignItems: "center" }}>
             <img src={Logo} style={{ width: "2rem", marginRight: "0.5rem" }} />
             <Title>Under the Ground</Title> Design System
@@ -230,7 +232,7 @@ export default function Header({ siteTitle, menuLinks }) {
             <div>
               <NavLink
                 isActive={active[1]}
-                to={"/philosophy"}
+                to={"/philosophy/"}
                 onClick={() => onClickSetActive(1)}
                 activeStyle={{ color: "#e00475" }}
               >

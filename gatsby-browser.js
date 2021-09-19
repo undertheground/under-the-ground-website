@@ -10,7 +10,7 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
 // Wraps every page in a component
 
 const holder = {
-  marginLeft: "14rem",
+  marginLeft: "16rem",
   // position: "relative",
 };
 export const wrapPageElement = ({ element, props }) => {
