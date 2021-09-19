@@ -3,6 +3,9 @@ import colors from '@undertheground/color';
 
 <style>
     {`
+    div{
+  text-align: justify;
+    }
 .link {
     text-decoration: none;
     color: ${colors.pink[3]}
@@ -10,12 +13,22 @@ import colors from '@undertheground/color';
 .link:hover {
     color: ${colors.pink[6]}
 }    
+@media (max-width:790px){
+    .image-responsive {
+        display: none
+    }
+    .main-container {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+        padding-top: 5rem
+    }
+}
     `}
 </style>
 
 <img className={'image-responsive'} style={{width: '100%'}} src={Philosophy}/>
 
-<div style={{marginLeft: '12rem', marginRight: "6rem"}}>
+<div className={'main-container'} style={{marginLeft: '12rem', marginRight: "6rem"}}>
 
 
 # Philosophy
@@ -33,22 +46,26 @@ Establishing a design language allows everyone to speak the same design language
 Our principles provide clear criteria for the concepts, craftsmanship and creativity our brand demands and which our team, our stackeholders and our clients deserve. 
 However, any <b>Good Design</b> doesn't mean if you couldn't describe your key features which are correlated with your identity as a company.
 
-### Simplicty 
+<div style= {{padding: '0 1rem'}}>
+
+
+### <p style={{color: colors.pink[3]}}>Simplicty</p> 
 Our vision as a software company is to develop high quality products with any complexity. There is a quote by Chopin stated that 
 "Simplicity is the final achievement. After one has played a vast quantity of notes and more notes, it is simplicity that emerges as the crowning reward of art".
 Therefore, Simplicity is the first attribute of this design system. In this regard, any element should decrease the complication rather than increase. 
 
-### Engineered 
+### <p style={{color: colors.pink[3]}}>Engineered </p>
 From atoms to complex elements of the Under the Ground design system has been engineered by the best software engineers and designers. We think in user experience in a engineering way, rather than intuitive.
 Most compelling ideas at the first are so uncanny that if you want to count on your intuition, you make a lot of mistakes. we think in user experience in a engineered way, collecting data for having the best 
 possible user experience and interface. 
 
-### Integrity without Similarity
+### <p style={{color: colors.pink[3]}}>Integrity without Similarity</p>
 We develop many products for many reasons. we need to have a signiture for ourselves so that any one could easily comprehend that these products has been developed by Wish Work team.
 On the other hand, as our purpose of these developments maybe diverse, our products doesn't have complete similarity with each other.
 
-### Inspired
+### <p style={{color: colors.pink[3]}}>Inspired</p>
 As a software company, respect people who inspired us in the path of deliver any value within our design form. We don't hesitate to admire the people who make
 the software world available to show aesthetic in the virtual world. 
 
+</div>
 </div>
