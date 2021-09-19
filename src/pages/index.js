@@ -26,6 +26,9 @@ const Tape = styled.div`
   margin-top: 2rem;
   color: #fff;
   text-align: justify;
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 const IndexPage = () => {
   return (
