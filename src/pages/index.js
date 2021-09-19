@@ -15,7 +15,7 @@ const Title = styled.div`
   padding-top: 10rem;
   @media (max-width: 768px) {
     margin-left: 0.5rem;
-    /* margin-top: 2rem; */
+    padding-top: 5rem;
     margin-right: 0.5rem;
   }
 `;
