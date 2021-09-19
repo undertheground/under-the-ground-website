@@ -1,4 +1,4 @@
-# under-the-ground-website
+# Under the Ground Website
 
 This repo will be the website of the Under the Ground design system.
 

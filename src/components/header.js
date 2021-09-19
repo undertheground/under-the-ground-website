@@ -5,8 +5,9 @@ import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 import "@fontsource/permanent-marker"; // Defaults to weight 400 with all styles included.
 import { createPortal } from "react-dom";
 import { Link } from "gatsby";
-
+import AllInclusiveIcon from "@material-ui/icons/AllInclusive";
 // import { NavLink } from "theme-ui";
+import colors from "@undertheground/color";
 
 export const Navbar = styled.nav`
   margin-top: 0;
@@ -79,6 +80,19 @@ export const Icon = styled.div`
   ${LI}:hover & {
     transform: rotate(180deg);
     transition: 500ms linear all;
+  }
+`;
+
+export const IconInfinite = styled.div`
+  transition: 500ms linear all;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  :hover {
+    transform: rotate(180deg);
+    transition: 500ms linear all;
+    transform-origin: center center;
   }
 `;
 
@@ -212,6 +226,7 @@ export default function Header({ siteTitle, menuLinks }) {
               </NavLink>
               <NavLink
                 isActive={active[2]}
+                to={"/team"}
                 onClick={() => onClickSetActive(2)}
                 activeStyle={{ color: "#e00475" }}
               >
@@ -219,6 +234,7 @@ export default function Header({ siteTitle, menuLinks }) {
               </NavLink>
               <NavLink
                 isActive={active[3]}
+                to={"/contribution"}
                 onClick={() => onClickSetActive(3)}
                 activeStyle={{ color: "#e00475" }}
               >
@@ -245,6 +261,7 @@ export default function Header({ siteTitle, menuLinks }) {
               <NavLink
                 isActive={active[5]}
                 onClick={() => onClickSetActive(5)}
+                to={"/inputdoc"}
                 activeStyle={{ color: "#e00475" }}
               >
                 Input
@@ -258,6 +275,27 @@ export default function Header({ siteTitle, menuLinks }) {
               </NavLink>
             </div>
           ) : null}
+          <div
+            style={{
+              position: "fixed",
+              bottom: "1rem",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <p style={{ color: colors.grey[3], marginLeft: "2rem" }}>
+              MAINTAINED FOR
+            </p>
+            <IconInfinite>
+              <AllInclusiveIcon
+                style={{
+                  color: "#e00475",
+                  marginLeft: "0.5rem",
+                  marginRight: "0.5rem",
+                }}
+              />
+            </IconInfinite>
+          </div>
         </UL>
       </Navbar>
       {/* <Button>Hello</Button> */}
