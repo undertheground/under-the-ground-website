@@ -1,6 +1,7 @@
 import React from "react";
 import MainLayout from "./src/components/main-layout";
 import Header from "./src/components/header";
+// import styled from
 // Logs when the client route changes
 export const onRouteUpdate = ({ location, prevLocation }) => {
   console.log("new pathname", location.pathname);
@@ -16,9 +17,15 @@ export const wrapPageElement = ({ element, props }) => {
   return (
     <>
       <Header></Header>
-      <div style={holder}>
-        <MainLayout {...props}>{element}</MainLayout>
-      </div>
+      {window.innerWidth > 768 ? (
+        <div style={holder}>
+          <MainLayout {...props}>{element}</MainLayout>
+        </div>
+      ) : (
+        <div>
+          <MainLayout {...props}>{element}</MainLayout>
+        </div>
+      )}
     </>
   );
 };

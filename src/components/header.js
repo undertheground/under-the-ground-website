@@ -8,9 +8,11 @@ import { Link } from "gatsby";
 import AllInclusiveIcon from "@material-ui/icons/AllInclusive";
 // import { NavLink } from "theme-ui";
 import colors from "@undertheground/color";
+import Logo from "../images/Under-the-Ground-Logo.svg";
 
 export const Navbar = styled.nav`
   margin-top: 0;
+  /* margin-bottom: 30px; */
   /* width: 100%; */
 `;
 
@@ -28,6 +30,9 @@ export const UL = styled.ul`
   position: fixed;
   width: 16rem;
   z-index: 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const LI = styled.li`
@@ -65,6 +70,10 @@ export const Head = styled.div`
   :hover {
     transition: 0.5s linear color;
     color: #e00475;
+  }
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 1.5rem;
   }
   @keyframes blinker {
     50% {
@@ -205,7 +214,10 @@ export default function Header({ siteTitle, menuLinks }) {
     <div>
       <Navbar>
         <Head>
-          <Title>Under the Ground</Title> Design System
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img src={Logo} style={{ width: "2rem", marginRight: "0.5rem" }} />
+            <Title>Under the Ground</Title> Design System
+          </div>
         </Head>
         <UL>
           <LI onClick={onClickDropDown}>

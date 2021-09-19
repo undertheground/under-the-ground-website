@@ -152,6 +152,14 @@ h6 {
 }
 
 @media (max-width:790px){
+    .main-container {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+        padding-top: 5rem
+    }
+    .image-responsive {
+        display: none;
+    }
     .row{
         display:grid;
         margin:0 auto;
@@ -224,11 +232,11 @@ h6 {
 
 `}</style>
 
-<img style={{width: '100%'}} src={ButtonCover}/>
+<img className={'image-responsive'} style={{width: '100%'}} src={ButtonCover}/>
 
-######
 
-<div style={{marginLeft: '12rem', marginRight: "6rem"}}>
+
+<div className={'main-container'} style={{marginLeft: '12rem', marginRight: "6rem"}}>
 
 # Button
 
