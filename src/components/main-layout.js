@@ -50,7 +50,7 @@ const MainLayout = ({ children, pageContext }) => {
 };
 
 export const query = graphql`
-  query MyQuery {
+  query layout {
     allMdx(filter: { excerpt: {} }) {
       edges {
         node {

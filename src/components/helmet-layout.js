@@ -20,17 +20,17 @@ const HelmetLayout = ({ data, children }) => {
     </div>
   );
 };
-export const query = graphql`
-  query MyQuery {
-    allMdx(filter: { excerpt: {} }) {
-      edges {
-        node {
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query MyQuery {
+//     allMdx(filter: { excerpt: {} }) {
+//       edges {
+//         node {
+//           frontmatter {
+//             title
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 export default HelmetLayout;
