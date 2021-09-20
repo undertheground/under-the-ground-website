@@ -14,7 +14,6 @@ const holder = {
   marginLeft: "16rem",
   // position: "relative",
 };
-const isBrowser = () => typeof window !== "undefined";
 const MainLayout = ({ children, pageContext }) => {
   const location = useLocation();
   let title, description;
@@ -29,7 +28,7 @@ const MainLayout = ({ children, pageContext }) => {
     console.log(location.pathname);
     console.log(description);
   }, []);
-  if (isBrowser) {
+  if (typeof window !== "undefined") {
     return (
       <div>
         <Helmet>
