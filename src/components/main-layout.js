@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { MDXProvider } from "@mdx-js/react";
 // import { Chart, Pullquote } from "./ui"
 import Header from "./header";
+import { graphql } from "gatsby";
 import ButtonCover from "../images/ButtonIcon/ButtonCover.png";
 import ImageContainer from "../components/image-container";
 // import { graphql, StaticQuery } from "gatsby";
