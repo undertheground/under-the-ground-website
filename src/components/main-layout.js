@@ -14,7 +14,7 @@ const holder = {
   marginLeft: "16rem",
   // position: "relative",
 };
-
+const isBrowser = () => typeof window !== "undefined";
 const MainLayout = ({ children, pageContext }) => {
   const location = useLocation();
   let title, description;
@@ -29,24 +29,28 @@ const MainLayout = ({ children, pageContext }) => {
     console.log(location.pathname);
     console.log(description);
   }, []);
-  return (
-    <div>
-      <Helmet>
-        <title>${title}</title>
-        <meta name="description" content={`${description}`} />
-      </Helmet>
-      <Header></Header>
-      {window.innerWidth > 768 ? (
-        <div style={holder}>
-          <Layout>{children}</Layout>
-        </div>
-      ) : (
-        <div>
-          <Layout>{children}</Layout>
-        </div>
-      )}
-    </div>
-  );
+  if (isBrowser) {
+    return (
+      <div>
+        <Helmet>
+          <title>${title}</title>
+          <meta name="description" content={`${description}`} />
+        </Helmet>
+        <Header></Header>
+        {window.innerWidth > 768 ? (
+          <div style={holder}>
+            <Layout>{children}</Layout>
+          </div>
+        ) : (
+          <div>
+            <Layout>{children}</Layout>
+          </div>
+        )}
+      </div>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export const query = graphql`
