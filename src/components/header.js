@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Button } from "@undertheground/react";
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
-import "@fontsource/permanent-marker"; // Defaults to weight 400 with all styles included.
 import { createPortal } from "react-dom";
 import { Link, navigate } from "gatsby";
 import AllInclusiveIcon from "@material-ui/icons/AllInclusive";
@@ -125,16 +124,16 @@ export const NavLink = styled(Link)`
     color: #e00475;
     transition: 500ms linear color;
   }
-  ${(props) => {
+  /* ${(props) => {
     if (props.isActive) {
       return `
       color: #e00475
       `;
     }
-  }}
+  }} */
 `;
 
-export default function Header({ siteTitle, menuLinks }) {
+export default function Header({}) {
   const [open, dropDown] = useState({ first: false, second: false });
   const [active, setActive] = useState({
     1: false,
@@ -231,7 +230,7 @@ export default function Header({ siteTitle, menuLinks }) {
           {open.first ? (
             <div>
               <NavLink
-                isActive={active[1]}
+                // isActive={active[1]}
                 to={"/philosophy/"}
                 onClick={() => onClickSetActive(1)}
                 activeStyle={{ color: "#e00475" }}
@@ -239,7 +238,7 @@ export default function Header({ siteTitle, menuLinks }) {
                 Philosophy
               </NavLink>
               <NavLink
-                isActive={active[2]}
+                // isActive={active[2]}
                 to={"/team"}
                 onClick={() => onClickSetActive(2)}
                 activeStyle={{ color: "#e00475" }}
@@ -247,7 +246,7 @@ export default function Header({ siteTitle, menuLinks }) {
                 Team
               </NavLink>
               <NavLink
-                isActive={active[3]}
+                // isActive={active[3]}
                 to={"/contribution"}
                 onClick={() => onClickSetActive(3)}
                 activeStyle={{ color: "#e00475" }}
@@ -265,7 +264,7 @@ export default function Header({ siteTitle, menuLinks }) {
           {open.second ? (
             <div>
               <NavLink
-                isActive={active[4]}
+                // isActive={active[4]}
                 onClick={() => onClickSetActive(4)}
                 to={"/buttondoc"}
                 activeStyle={{ color: "#e00475" }}
@@ -273,7 +272,7 @@ export default function Header({ siteTitle, menuLinks }) {
                 Button
               </NavLink>
               <NavLink
-                isActive={active[5]}
+                // isActive={active[5]}
                 onClick={() => onClickSetActive(5)}
                 to={"/inputdoc"}
                 activeStyle={{ color: "#e00475" }}
@@ -281,7 +280,7 @@ export default function Header({ siteTitle, menuLinks }) {
                 Input
               </NavLink>
               <NavLink
-                isActive={active[6]}
+                // isActive={active[6]}
                 onClick={() => onClickSetActive(6)}
                 activeStyle={{ color: "#e00475" }}
               >

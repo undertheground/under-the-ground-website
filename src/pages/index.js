@@ -1,7 +1,7 @@
 import * as React from "react";
 import "@fontsource/play"; // Defaults to weight 400 with all styles included.
 import "../styles/global.css";
-import Layout from "../components/layout.js";
+import MainLayout from "../components/main-layout.js";
 import { Button } from "@undertheground/react";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
@@ -32,7 +32,7 @@ const Tape = styled.div`
 `;
 const IndexPage = () => {
   return (
-    <Layout>
+    <MainLayout>
       <Title>
         <h1>Let the System Emerge</h1>
       </Title>
@@ -62,7 +62,7 @@ const IndexPage = () => {
         Button Document
       </Button>
       {/* <br /> */}
-    </Layout>
+    </MainLayout>
   );
 };
 
