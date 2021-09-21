@@ -11,7 +11,7 @@ import { Link, navigate } from "gatsby";
 
 const Title = styled.div`
   margin-right: 6rem;
-  margin-left: 2rem;
+  margin-left: 6rem;
   padding-top: 10rem;
   @media (max-width: 768px) {
     margin-left: 0.5rem;
@@ -22,7 +22,7 @@ const Title = styled.div`
 
 const Tape = styled.div`
   background-color: #000;
-  padding: 5rem;
+  padding: 6rem;
   margin-top: 2rem;
   color: #fff;
   text-align: justify;
@@ -45,22 +45,24 @@ const IndexPage = () => {
         <br />
         Steve Jobs
       </Tape>
-      <Button
-        kind={"primary"}
-        iconMode={"with-icon"}
-        iconName="chevron_right"
-        onClick={() => navigate("/philosophy")}
-      >
-        Philosophy
-      </Button>
-      <Button
-        kind={"secondary"}
-        iconMode={"with-icon"}
-        iconName="chevron_right"
-        onClick={() => navigate("/buttondoc")}
-      >
-        Button Document
-      </Button>
+      <div style={{ marginLeft: "5rem" }}>
+        <Button
+          kind={"primary"}
+          iconMode={"with-icon"}
+          iconName="chevron_right"
+          onClick={() => navigate("/philosophy")}
+        >
+          Philosophy
+        </Button>
+        <Button
+          kind={"secondary"}
+          iconMode={"with-icon"}
+          iconName="chevron_right"
+          onClick={() => navigate("/buttondoc")}
+        >
+          Button Document
+        </Button>
+      </div>
       {/* <br /> */}
     </MainLayout>
   );

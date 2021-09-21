@@ -11,7 +11,8 @@ import { Helmet } from "react-helmet";
 import { useLocation } from "@reach/router";
 
 const holder = {
-  marginLeft: "16rem",
+  marginLeft: "12rem",
+  // marginRight: "6rem",
   // position: "relative",
 };
 const MainLayout = ({ children, pageContext }) => {
@@ -21,8 +22,9 @@ const MainLayout = ({ children, pageContext }) => {
     title = pageContext.frontmatter.title;
     description = pageContext.frontmatter.description;
   } else {
-    title = "hi";
-    description = "pageContext.frontmatter.description ";
+    title = "Under the Ground Design System";
+    description =
+      "Under the Ground design system has been developed by Wish Work team to develop state-of-the-art software products";
   }
   useEffect(() => {
     console.log(location.pathname);
@@ -32,7 +34,7 @@ const MainLayout = ({ children, pageContext }) => {
     return (
       <div>
         <Helmet>
-          <title>${title}</title>
+          <title>{title}</title>
           <meta name="description" content={`${description}`} />
         </Helmet>
         <Header></Header>

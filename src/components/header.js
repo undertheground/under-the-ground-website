@@ -21,7 +21,6 @@ export const UL = styled.ul`
   flex-direction: column;
   padding-left: 0;
   height: 100%;
-  /* border-: linear-gradient(to right, darkblue, darkorchid) 1; */
   border-right: #e0e0e0 solid 1px;
   border-image: linear-gradient(to top, #e1e1e1, #000) 1;
   list-style: none;
@@ -35,10 +34,8 @@ export const UL = styled.ul`
 `;
 
 const LI = styled.li`
-  /* margin-top: 1rem; */
   align-self: auto;
   display: flex;
-  /* padding-right: 6rem; */
   color: #e0e0e0;
   padding-left: 1rem;
   padding-bottom: 1rem;
@@ -59,7 +56,6 @@ export const Head = styled.div`
   z-index: 1;
   position: fixed;
   padding: 1rem;
-  /* position: fixed; */
   width: 100%;
   cursor: pointer;
   border-bottom: 1px #e0e0e0 solid;
@@ -124,13 +120,6 @@ export const NavLink = styled(Link)`
     color: #e00475;
     transition: 500ms linear color;
   }
-  /* ${(props) => {
-    if (props.isActive) {
-      return `
-      color: #e00475
-      `;
-    }
-  }} */
 `;
 
 export default function Header({}) {
