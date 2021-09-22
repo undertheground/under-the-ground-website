@@ -15,7 +15,7 @@ const holder = {
   // marginRight: "6rem",
   // position: "relative",
 };
-const MainLayout = ({ children, pageContext }) => {
+const MainLayout = ({ children, pageContext, components }) => {
   const location = useLocation();
   let title, description;
   if (location.pathname != "/") {
@@ -37,16 +37,7 @@ const MainLayout = ({ children, pageContext }) => {
           <title>{title}</title>
           <meta name="description" content={`${description}`} />
         </Helmet>
-        <Header></Header>
-        {window.innerWidth > 768 ? (
-          <div style={holder}>
-            <Layout>{children}</Layout>
-          </div>
-        ) : (
-          <div>
-            <Layout>{children}</Layout>
-          </div>
-        )}
+        <Layout components={components}>{children}</Layout>
       </div>
     );
   } else {
@@ -54,20 +45,6 @@ const MainLayout = ({ children, pageContext }) => {
   }
 };
 
-export const query = graphql`
-  query layout {
-    allMdx(filter: { excerpt: {} }) {
-      edges {
-        node {
-          frontmatter {
-            description
-            title
-          }
-        }
-      }
-    }
-  }
-`;
 // />
 // );
 // };

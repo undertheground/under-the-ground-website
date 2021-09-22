@@ -26,13 +26,6 @@ module.exports = {
     ],
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-theme-ui",
-      options: {
-        prismPreset: "night-owl",
-        preset: "@theme-ui/preset-funk",
-      },
-    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",

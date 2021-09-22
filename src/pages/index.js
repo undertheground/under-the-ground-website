@@ -5,7 +5,7 @@ import MainLayout from "../components/main-layout.js";
 import { Button } from "@undertheground/react";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
-import InputImage from "../images/InputCover.png";
+// import InputImage from "../images/InputCover.png";
 
 // styles
 
