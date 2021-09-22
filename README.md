@@ -6,8 +6,8 @@ For more information check the link below:
 
 Repository:
 
-<a href="https://github.com/undertheground/design-system">Under the Ground Website</a>
+<a href="https://github.com/undertheground/design-system">Under the Ground Repository</a>
 
 Website:
 
-<a href="https://undertheground.wishwork.org">Under the Ground Repository</a>
+<a href="https://undertheground.wishwork.org">Under the Ground Website</a>
