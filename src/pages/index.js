@@ -5,8 +5,9 @@ import MainLayout from "../components/main-layout.js";
 import { Button } from "@undertheground/react";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
-import GitHubIcon from "@material-ui/icons/GitHub";
-
+import GitHubIcon from "../images/Octicons-mark-github.svg";
+import FigmaIcon from "../images/Figma-logo.svg";
+import AdobeXD from "../images/Adobe_XD_CC_icon.svg";
 // import InputImage from "../images/InputCover.png";
 
 // styles
@@ -38,6 +39,15 @@ const Tape = styled.div`
     border-image: linear-gradient(to left, #e00475, #3970ca) 0.5;
   }
 `;
+
+export const SocialIcon = styled.img`
+  width: 2rem;
+  margin: 0 0.5rem;
+  :hover {
+    cursor: pointer;
+  }
+`;
+
 const IndexPage = () => {
   return (
     <MainLayout>
@@ -53,8 +63,15 @@ const IndexPage = () => {
         <br />
         Steve Jobs
       </Tape>
-      <div style={{ marginLeft: "2rem" }}>
-        <GitHubIcon />
+      <div style={{ marginLeft: "3rem" }}>
+        <a
+          href="https://github.com/undertheground/design-system"
+          target="_blank"
+        >
+          <SocialIcon src={GitHubIcon} />
+        </a>
+        <SocialIcon src={FigmaIcon} />
+        <SocialIcon src={AdobeXD} />
       </div>
     </MainLayout>
   );
