@@ -176,6 +176,15 @@ export const NavLink = styled(Link)`
   }
 `;
 
+export const Holder = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Home = styled.div`
+  display: flex;
+`;
+
 export default function Header({}) {
   const [open, dropDown] = useState({ first: false, second: false });
   // const [openPhone, dropDownPhone] = useState({first: false, second: false})
@@ -193,21 +202,18 @@ export default function Header({}) {
     <div>
       <Navbar>
         <Head>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <div
-              style={{ display: "flex" }}
-              onClick={() => navigate("/", { replace: true })}
-            >
+          <Holder>
+            <Home onClick={() => navigate("/", { replace: true })}>
               <img
                 src={Logo}
                 style={{ width: "2rem", marginRight: "0.5rem" }}
               />
               <Title>Under the Ground Design System</Title>
-            </div>
+            </Home>
             <PhoneMenu>
               <MenuIcon onClick={() => toggle()} />
             </PhoneMenu>
-          </div>
+          </Holder>
           {isOpen ? (
             <PhoneMenuPage>
               <ULPhone>
