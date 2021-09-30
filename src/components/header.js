@@ -105,6 +105,8 @@ export const LIPhone = styled.li`
 
 export const Head = styled.div`
   background-color: #04010a;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   z-index: 1;
   position: fixed;
@@ -207,14 +209,9 @@ export default function Header({}) {
     <div>
       <Navbar>
         <Head>
-          <Holder>
-            <Home onClick={() => navigate("/", { replace: true })}>
-              <img
-                src={Logo}
-                style={{ width: "2rem", marginRight: "0.5rem" }}
-              />
-              <Title>Under the Ground Design System</Title>
-            </Home>
+          <Holder onClick={() => navigate("/", { replace: true })}>
+            <img src={Logo} style={{ width: "2rem", marginRight: "0.5rem" }} />
+            <Title>Under the Ground Design System</Title>
             <PhoneMenu>
               <MenuIcon onClick={() => toggle()} />
             </PhoneMenu>
