@@ -30,6 +30,9 @@ const Tape = styled.div`
   text-align: justify;
   @media (max-width: 768px) {
     padding: 2rem 5rem;
+    border-bottom: 3px #e0e0e0 solid;
+    border-top: 3px #e0e0e0 solid;
+    border-image: linear-gradient(to left, #e00475, #3970ca) 0.5;
   }
 `;
 const IndexPage = () => {

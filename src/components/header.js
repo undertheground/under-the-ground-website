@@ -117,6 +117,7 @@ export const Head = styled.div`
   color: #e0e0e0;
   transition: 0.5s linear color;
   @media (max-width: 768px) {
+    border-bottom: 3px #e0e0e0 solid;
     border-image: linear-gradient(to left, #e00475, #3970ca) 0.5;
   }
 `;
