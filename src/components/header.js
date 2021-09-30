@@ -105,8 +105,6 @@ export const LIPhone = styled.li`
 
 export const Head = styled.div`
   background-color: #04010a;
-  display: flex;
-  align-items: center;
   text-decoration: none;
   z-index: 1;
   position: fixed;
