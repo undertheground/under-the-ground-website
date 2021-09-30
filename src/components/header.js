@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Button } from "@undertheground/react";
+// import { Button } from "@undertheground/react";
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
+import MenuIcon from "@material-ui/icons/Menu";
 import { createPortal } from "react-dom";
 import { Link, navigate } from "gatsby";
 import AllInclusiveIcon from "@material-ui/icons/AllInclusive";
 // import { NavLink } from "theme-ui";
 import colors from "@undertheground/color";
 import Logo from "../images/Under-the-Ground-Logo.svg";
+import { Height } from "@material-ui/icons";
 
 export const Navbar = styled.nav`
   margin-top: 0;
@@ -15,8 +17,15 @@ export const Navbar = styled.nav`
   /* width: 100%; */
 `;
 
+export const PhoneMenuPage = styled.div`
+  /* display: none; */
+  z-index: 3;
+`;
+
 export const PhoneMenu = styled.div`
   display: none;
+  margin-left: auto;
+  margin-right: 4rem;
   @media (max-width: 768px) {
     display: block;
   }
@@ -40,7 +49,39 @@ export const UL = styled.ul`
   }
 `;
 
+export const ULPhone = styled.ul`
+  /* padding-top: 6rem; */
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  height: 100%;
+  border-right: #e0e0e0 solid 1px;
+  border-image: linear-gradient(to top, #e1e1e1, #000) 1;
+  list-style: none;
+  background-color: #04010a;
+  /* position: fixed; */
+  width: 100%;
+  z-index: 0;
+`;
+
 const LI = styled.li`
+  align-self: auto;
+  display: flex;
+  color: #e0e0e0;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 700;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding-top: 1rem;
+  :hover {
+    transition: all 0.5s;
+    background-color: azure;
+    color: #e00475;
+  }
+`;
+
+export const LIPhone = styled.li`
   align-self: auto;
   display: flex;
   color: #e0e0e0;
@@ -70,18 +111,8 @@ export const Head = styled.div`
   font-size: 1.8rem;
   color: #e0e0e0;
   transition: 0.5s linear color;
-  :hover {
-    transition: 0.5s linear color;
-    color: #e00475;
-  }
   @media (max-width: 768px) {
-    font-size: 0.8rem;
-    padding: 1.5rem;
-  }
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
+    border-image: linear-gradient(to left, #e00475, #3970ca) 0.5;
   }
 `;
 
@@ -92,6 +123,9 @@ export const Icon = styled.div`
   ${LI}:hover & {
     transform: rotate(180deg);
     transition: 500ms linear all;
+  }
+  @media (max-width: 768px) {
+    margin-right: 4rem;
   }
 `;
 
@@ -112,6 +146,19 @@ export const Title = styled.div`
   font-family: "Permanent Marker", cursive;
   display: inline;
   margin-right: 0.5rem;
+  :hover {
+    transition: 0.5s linear color;
+    color: #e00475;
+  }
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 1.5rem;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -131,93 +178,119 @@ export const NavLink = styled(Link)`
 
 export default function Header({}) {
   const [open, dropDown] = useState({ first: false, second: false });
-  const [active, setActive] = useState({
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-    6: false,
-  });
+  // const [openPhone, dropDownPhone] = useState({first: false, second: false})
+  const [isOpen, openMenu] = useState(false);
   const onClickDropDown = () => {
     dropDown({ ...open, first: !open.first });
   };
   const onClickDropDown2 = () => {
     dropDown({ ...open, second: !open.second });
   };
-  const onClickSetActive = (item) => {
-    if (item === 1) {
-      setActive({
-        2: false,
-        3: false,
-        4: false,
-        5: false,
-        6: false,
-        1: true,
-      });
-    }
-    if (item === 2) {
-      setActive({
-        1: false,
-        3: false,
-        4: false,
-        5: false,
-        6: false,
-        2: true,
-      });
-    }
-    if (item === 3) {
-      setActive({
-        2: false,
-        1: false,
-        4: false,
-        5: false,
-        6: false,
-        3: true,
-      });
-    }
-    if (item === 4) {
-      setActive({
-        2: false,
-        1: false,
-        3: false,
-        5: false,
-        6: false,
-        4: true,
-      });
-    }
-    if (item === 5) {
-      setActive({
-        2: false,
-        1: false,
-        4: false,
-        3: false,
-        5: true,
-        6: false,
-      });
-    }
-    if (item === 6) {
-      setActive({
-        2: false,
-        1: false,
-        4: false,
-        5: false,
-        3: false,
-        6: true,
-      });
-    }
+  const toggle = () => {
+    openMenu((isOpen) => !isOpen);
   };
   return (
     <div>
       <Navbar>
-        <Head onClick={() => navigate("/", { replace: true })}>
+        <Head>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <img src={Logo} style={{ width: "2rem", marginRight: "0.5rem" }} />
-            <Title>Under the Ground</Title> Design System
+            <div
+              style={{ display: "flex" }}
+              onClick={() => navigate("/", { replace: true })}
+            >
+              <img
+                src={Logo}
+                style={{ width: "2rem", marginRight: "0.5rem" }}
+              />
+              <Title>Under the Ground Design System</Title>
+            </div>
             <PhoneMenu>
-              {/* <span class="material-icons-outlined" onClick={() => openMenue()}>menu</span> */}
+              <MenuIcon onClick={() => toggle()} />
             </PhoneMenu>
           </div>
+          {isOpen ? (
+            <PhoneMenuPage>
+              <ULPhone>
+                <LIPhone onClick={onClickDropDown}>
+                  Under the Ground
+                  <Icon>
+                    <ArrowDropUp />
+                  </Icon>
+                </LIPhone>
+                {open.first ? (
+                  <div>
+                    <NavLink
+                      onClick={() => {
+                        toggle();
+                      }}
+                      to={"/philosophy/"}
+                      activeStyle={{ color: "#e00475" }}
+                    >
+                      Philosophy
+                    </NavLink>
+                    <NavLink
+                      // isActive={active[2]}
+                      onClick={() => {
+                        toggle();
+                      }}
+                      to={"/team"}
+                      activeStyle={{ color: "#e00475" }}
+                    >
+                      Team
+                    </NavLink>
+                    <NavLink
+                      onClick={() => {
+                        toggle();
+                      }}
+                      to={"/contribution"}
+                      activeStyle={{ color: "#e00475" }}
+                    >
+                      Contribution
+                    </NavLink>
+                  </div>
+                ) : null}
+                <LIPhone onClick={onClickDropDown2}>
+                  Components
+                  <Icon>
+                    <ArrowDropUp />
+                  </Icon>
+                </LIPhone>
+                {open.second ? (
+                  <div>
+                    <NavLink
+                      // isActive={active[4]}
+                      onClick={() => {
+                        toggle();
+                      }}
+                      to={"/buttondoc"}
+                      activeStyle={{ color: "#e00475" }}
+                    >
+                      Button
+                    </NavLink>
+                    <NavLink
+                      onClick={() => {
+                        toggle();
+                      }}
+                      // isActive={active[5]}
+                      to={"/inputdoc"}
+                      activeStyle={{ color: "#e00475" }}
+                    >
+                      Input
+                    </NavLink>
+                    <NavLink
+                      onClick={() => {
+                        toggle();
+                      }}
+                      // isActive={active[6]}
+                      activeStyle={{ color: "#e00475" }}
+                    >
+                      Sidenav
+                    </NavLink>
+                  </div>
+                ) : null}
+              </ULPhone>
+            </PhoneMenuPage>
+          ) : null}
         </Head>
         <UL>
           <LI onClick={onClickDropDown}>
@@ -228,28 +301,17 @@ export default function Header({}) {
           </LI>
           {open.first ? (
             <div>
-              <NavLink
-                // isActive={active[1]}
-                to={"/philosophy/"}
-                onClick={() => onClickSetActive(1)}
-                activeStyle={{ color: "#e00475" }}
-              >
+              <NavLink to={"/philosophy/"} activeStyle={{ color: "#e00475" }}>
                 Philosophy
               </NavLink>
               <NavLink
                 // isActive={active[2]}
                 to={"/team"}
-                onClick={() => onClickSetActive(2)}
                 activeStyle={{ color: "#e00475" }}
               >
                 Team
               </NavLink>
-              <NavLink
-                // isActive={active[3]}
-                to={"/contribution"}
-                onClick={() => onClickSetActive(3)}
-                activeStyle={{ color: "#e00475" }}
-              >
+              <NavLink to={"/contribution"} activeStyle={{ color: "#e00475" }}>
                 Contribution
               </NavLink>
             </div>
@@ -264,7 +326,6 @@ export default function Header({}) {
             <div>
               <NavLink
                 // isActive={active[4]}
-                onClick={() => onClickSetActive(4)}
                 to={"/buttondoc"}
                 activeStyle={{ color: "#e00475" }}
               >
@@ -272,7 +333,6 @@ export default function Header({}) {
               </NavLink>
               <NavLink
                 // isActive={active[5]}
-                onClick={() => onClickSetActive(5)}
                 to={"/inputdoc"}
                 activeStyle={{ color: "#e00475" }}
               >
@@ -280,7 +340,6 @@ export default function Header({}) {
               </NavLink>
               <NavLink
                 // isActive={active[6]}
-                onClick={() => onClickSetActive(6)}
                 activeStyle={{ color: "#e00475" }}
               >
                 Sidenav

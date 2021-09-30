@@ -17,7 +17,7 @@ const Title = styled.div`
   padding-top: 10rem;
   @media (max-width: 768px) {
     margin-left: 0.5rem;
-    padding-top: 5.5rem;
+    padding-top: 8rem;
     margin-right: 0.5rem;
   }
 `;
@@ -47,25 +47,6 @@ const IndexPage = () => {
         <br />
         Steve Jobs
       </Tape>
-      <div style={{ marginLeft: "5rem" }}>
-        <Button
-          kind={"primary"}
-          iconMode={"with-icon"}
-          iconName="chevron_right"
-          onClick={() => navigate("/philosophy")}
-        >
-          Philosophy
-        </Button>
-        <Button
-          kind={"secondary"}
-          iconMode={"with-icon"}
-          iconName="chevron_right"
-          onClick={() => navigate("/buttondoc")}
-        >
-          Button Document
-        </Button>
-      </div>
-      {/* <br /> */}
     </MainLayout>
   );
 };
