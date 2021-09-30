@@ -62,6 +62,10 @@ export const ULPhone = styled.ul`
   /* position: fixed; */
   width: 100%;
   z-index: 0;
+  @media (max-width: 768px) {
+    border-image: none;
+    border-right: none;
+  }
 `;
 
 const LI = styled.li`
@@ -88,6 +92,7 @@ export const LIPhone = styled.li`
   padding-left: 1rem;
   padding-bottom: 1rem;
   font-weight: 700;
+  font-size: 1rem;
   transition: all 0.5s;
   cursor: pointer;
   padding-top: 1rem;
