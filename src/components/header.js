@@ -27,7 +27,7 @@ export const PhoneMenu = styled.div`
   margin-left: auto;
   margin-right: 4rem;
   @media (max-width: 768px) {
-    display: block;
+    display: inline-block;
   }
 `;
 
