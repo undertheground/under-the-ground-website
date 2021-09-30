@@ -179,6 +179,9 @@ export const NavLink = styled(Link)`
     color: #e00475;
     transition: 500ms linear color;
   }
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Holder = styled.div`
