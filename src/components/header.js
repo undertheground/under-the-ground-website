@@ -207,9 +207,11 @@ export default function Header({}) {
     <div>
       <Navbar>
         <Head>
-          <Holder onClick={() => navigate("/", { replace: true })}>
+          <Holder>
             <img src={Logo} style={{ width: "2rem", marginRight: "0.5rem" }} />
-            <Title>Under the Ground Design System</Title>
+            <Title onClick={() => navigate("/", { replace: true })}>
+              Under the Ground Design System
+            </Title>
             <PhoneMenu>
               <MenuIcon onClick={() => toggle()} />
             </PhoneMenu>
