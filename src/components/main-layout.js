@@ -35,7 +35,10 @@ const MainLayout = ({ children, pageContext, components }) => {
       <div>
         <Helmet>
           <title>{title}</title>
+          <meta name="twitter:url" content="https://wishwork.org" />
+          <meta name="og:title" content={`${description}`} />
           <meta name="description" content={`${description}`} />
+          <meta name="og:description" content={`${description}`} />
         </Helmet>
         <Layout components={components}>{children}</Layout>
       </div>

@@ -15,6 +15,13 @@ export const Navbar = styled.nav`
   /* width: 100%; */
 `;
 
+export const PhoneMenu = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
 export const UL = styled.ul`
   padding-top: 6rem;
   display: flex;
@@ -60,7 +67,7 @@ export const Head = styled.div`
   cursor: pointer;
   border-bottom: 1px #e0e0e0 solid;
   border-image: linear-gradient(to left, #e1e1e1, #000) 0.5;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #e0e0e0;
   transition: 0.5s linear color;
   :hover {
@@ -207,6 +214,9 @@ export default function Header({}) {
           <div style={{ display: "flex", alignItems: "center" }}>
             <img src={Logo} style={{ width: "2rem", marginRight: "0.5rem" }} />
             <Title>Under the Ground</Title> Design System
+            <PhoneMenu>
+              {/* <span class="material-icons-outlined" onClick={() => openMenue()}>menu</span> */}
+            </PhoneMenu>
           </div>
         </Head>
         <UL>
