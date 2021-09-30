@@ -36,16 +36,17 @@ export const UL = styled.ul`
   display: flex;
   flex-direction: column;
   padding-left: 0;
-  /* height: 100%; */
+  height: 100%;
   border-right: #e0e0e0 solid 1px;
   border-image: linear-gradient(to top, #e1e1e1, #000) 1;
   list-style: none;
   background-color: #04010a;
   position: fixed;
-  /* width: 16rem; */
+  width: 16rem;
   z-index: 0;
   @media (max-width: 768px) {
     display: none;
+    /* height: auto; */
   }
 `;
 

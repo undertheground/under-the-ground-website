@@ -5,6 +5,8 @@ import MainLayout from "../components/main-layout.js";
 import { Button } from "@undertheground/react";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
+import GitHubIcon from "@material-ui/icons/GitHub";
+
 // import InputImage from "../images/InputCover.png";
 
 // styles
@@ -26,6 +28,7 @@ const Tape = styled.div`
   background-color: #000;
   padding: 6rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   color: #fff;
   text-align: justify;
   @media (max-width: 768px) {
@@ -50,6 +53,9 @@ const IndexPage = () => {
         <br />
         Steve Jobs
       </Tape>
+      <div style={{ marginLeft: "2rem" }}>
+        <GitHubIcon />
+      </div>
     </MainLayout>
   );
 };
