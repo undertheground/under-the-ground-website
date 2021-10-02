@@ -1,7 +1,7 @@
 ---
-title: Under the Ground Input Documentation
+title: Under the Ground | Input Documentation
 author: Wish Work
-description: Script that has depicted how an input egineered in the best possible way
+description: Script that has depicted how a text input has been egineered in the best possible way
 ---
 
 
@@ -41,23 +41,26 @@ import InputImage from '../images/InputCover.png';
 
 <div className={'main-container'} style={{marginLeft: '12rem', marginRight: "6rem"}}>
 
-# Input 
+# Text Input 
 
 ######
 
 ## Overview 
 
-Inputs are used to create interactive controls for web-based forms in order to accept data from the user. Users could send their data in 
-wide varety of types. 
+Text Input are used to create interactive controls for web-based forms in order to accept data from the user. Users could send their data in 
+wide varety of types. Although we could describe input as anything user send to the databases, we limited the ontology of the Text Input to an input with the string type value.
+Therefore, date picker, file uploader and any other input formats doesn't include by this component.  
 
 ## Usage
 
-An input with `leftIconName`, `rightIconName`, `name`, `title`, and `sizeType` has been represented below.
+A `<TextInput>` with `leftIconName`, `rightIconName`, `name`, `title`, and `sizeType` has been represented below.
 
 ### Live Demo 
 
 ```js
 
+// for the matter of usage in React, we need import the component like below:
+// import { TextInput } from '@undertheground/react';
 
 <TextInput
   name="Password"

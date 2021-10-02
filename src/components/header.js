@@ -9,7 +9,6 @@ import AllInclusiveIcon from "@material-ui/icons/AllInclusive";
 // import { NavLink } from "theme-ui";
 import colors from "@undertheground/color";
 import Logo from "../images/Under-the-Ground-Logo.svg";
-import { Height } from "@material-ui/icons";
 
 export const Navbar = styled.nav`
   margin-top: 0;
@@ -275,7 +274,7 @@ export default function Header({}) {
                       onClick={() => {
                         toggle();
                       }}
-                      to={"/buttondoc"}
+                      to={"/button-doc"}
                       activeStyle={{ color: "#e00475" }}
                     >
                       Button
@@ -285,10 +284,10 @@ export default function Header({}) {
                         toggle();
                       }}
                       // isActive={active[5]}
-                      to={"/inputdoc"}
+                      to={"/text-input-doc"}
                       activeStyle={{ color: "#e00475" }}
                     >
-                      Input
+                      Text Input
                     </NavLink>
                     <NavLink
                       onClick={() => {
@@ -339,17 +338,17 @@ export default function Header({}) {
             <div>
               <NavLink
                 // isActive={active[4]}
-                to={"/buttondoc"}
+                to={"/button-doc"}
                 activeStyle={{ color: "#e00475" }}
               >
                 Button
               </NavLink>
               <NavLink
                 // isActive={active[5]}
-                to={"/inputdoc"}
+                to={"/text-input-doc"}
                 activeStyle={{ color: "#e00475" }}
               >
-                Input
+                Text Input
               </NavLink>
               <NavLink
                 // isActive={active[6]}

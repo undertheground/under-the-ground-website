@@ -8,7 +8,7 @@ import { Link, navigate } from "gatsby";
 import GitHubIcon from "../images/Octicons-mark-github.svg";
 import FigmaIcon from "../images/Figma-logo.svg";
 import AdobeXD from "../images/Adobe_XD_CC_icon.svg";
-// import InputImage from "../images/InputCover.png";
+// import background from "../images/InputCover.png";
 
 // styles
 
