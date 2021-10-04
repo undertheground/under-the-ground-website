@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.undertheground.wishwork.org",
+    siteUrl: "https://undertheground.wishwork.org",
     title: "under the ground website",
     menuLinks: [
       {
