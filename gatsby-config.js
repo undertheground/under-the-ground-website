@@ -63,5 +63,15 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-209847724-1        ",
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+        pageTransitionDelay: 0
+      },
+    },
   ],
 };
